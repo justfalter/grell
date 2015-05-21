@@ -1,0 +1,8 @@
+grell:
+  build: .
+  volumes:
+    - ./docker:/docker
+    - ./src:/app
+    - config/:/config
+  ports:
+    - 9292:9292
