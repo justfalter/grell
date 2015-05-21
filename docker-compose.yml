@@ -1,0 +1,10 @@
+grell:
+  image: justfalter/grell:latest
+  environment:
+    - RAILS_ENV=development
+  volumes:
+    - ./docker:/docker
+    - ./src:/app
+    - config/:/config
+  ports:
+    - 9292:9292

@@ -1,0 +1,23 @@
+FROM ubuntu:14.04
+
+ADD docker/etc/apt/sources.list.d/brightbox-ruby-ng.list /etc/apt/sources.list.d/brightbox-ruby-ng.list
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C3173AA6 && \
+    apt-get update && \
+    apt-get install -y eatmydata && \
+    eatmydata apt-get upgrade -y && \
+    apt-get clean && \
+    rm -fr /var/lib/apt/lists/*
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    eatmydata apt-get update && \
+    eatmydata apt-get install -y ca-certificates ruby2.2 libxml2 libxslt1.1 && \
+    apt-get clean && \
+    rm -fr /var/lib/apt/lists/*
+
+RUN echo "gem: --no-document" >> /etc/gemrc
+
+RUN gem install bundler
+
+RUN useradd -m grell
