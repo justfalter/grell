@@ -9,6 +9,15 @@ class API < Grape::API
     mount api => path
   end
 
+
+  namespace :grell do
+    desc "Returns information about the grell instance"
+    get :about do
+      { version: Grell::Version }
+    end
+  end
+
+
   add_swagger_documentation :base_path => '/',
                             :format => 'json'
 end
