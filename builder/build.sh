@@ -13,6 +13,7 @@ bundle config --global build.nokogiri --use-system-libraries --with-xml2-include
 bundle config --global without "development:test"
 
 bundler install --clean
+rm -fr ${VENDORDIR}/cache/*.gem
 
 cd ${BUILDROOT}
 docker build -f grell/Dockerfile.app -t justfalter/grell:latest .
