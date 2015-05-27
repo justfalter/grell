@@ -1,1 +1,4 @@
 .git/
+src/log/
+src/.bundle/
+src/tmp

@@ -1,3 +1,6 @@
+0.0.4
+=====
+* Make sure things are properly excluded from the docker image.
 
 0.0.3 
 =====

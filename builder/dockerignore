@@ -1,0 +1,5 @@
+grell/.git/
+grell/src/log/
+grell/src/.bundle/
+grell/src/tmp
+vendor/cache/
