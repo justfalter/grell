@@ -32,7 +32,7 @@ module Grell
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     config.autoload_paths += Dir[Rails.root.join('lib')]
 
-
+    config.middleware.use "BehindProxy"
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

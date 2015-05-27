@@ -3,8 +3,10 @@ grell:
   environment:
     - RAILS_ENV=development
   volumes:
+    - ./api_browser:/api_browser
     - ./docker:/docker
     - ./src:/app
     - config/:/config
   ports:
     - 9292:9292
+    - 8080:80

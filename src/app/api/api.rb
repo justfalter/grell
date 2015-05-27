@@ -18,6 +18,7 @@ class API < Grape::API
   end
 
 
-  add_swagger_documentation :base_path => '/',
-                            :format => 'json'
+  add_swagger_documentation :base_path => lambda { |request| request.script_name },
+                            :format => 'json',
+                            :hide_documentation_path => true
 end
