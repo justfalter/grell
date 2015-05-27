@@ -6,6 +6,7 @@ gem 'puma', '~> 2.11.3'
 gem 'grape', '~> 0.11.0'
 gem 'grape-swagger', '~> 0.10.1'
 gem 'grape-swagger-rails', '~> 0.1.0'
+gem 'rack-cors', '~> 0.4.0', :require => 'rack/cors'
 
 gem 'faraday', '~> 0.9.1'
 gem 'excon', '~> 0.45.3'
